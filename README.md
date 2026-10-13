@@ -48,6 +48,8 @@ Each part uses exactly what we did in class. The `practice/` and `practice-wed/`
    ```
    Type something and press Enter. What does the Console show?
 
+  - The console shows "searching for something", if the word I typed in was in fact "something"
+
 3. Call the fake search. Add these lines **inside** your submit listener, after the `console.log`:
    ```js
      fakeSearch(query, function (books) {
@@ -55,6 +57,8 @@ Each part uses exactly what we did in class. The `practice/` and `practice-wed/`
      });
    ```
    Search `butler`. After a second, the Console shows what `fakeSearch` sent back. How many books, and what are their titles?
+
+  - The search sends back two books, 'Parable of the Sower', and 'Kindred'
 
 4. **Show that it's working.** Inside the listener, before `fakeSearch`, add:
    ```js
@@ -87,6 +91,8 @@ Each part uses exactly what we did in class. The `practice/` and `practice-wed/`
        li.append(save);
    ```
    Click Save on each book. How does each button know *which* book it belongs to?
+
+  - Because of the line books.forEach. This line generates the list element for each book found, and part of that is generating the save button
 
 **Check:** `butler` → "Searching..." for a second → two books. `zzz` → "No books found". Save → that book's title in the Console.
 
