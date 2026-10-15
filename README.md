@@ -133,6 +133,8 @@ Commit: `Part 1: fake search shows results`
    Search `octavia butler`. Real books! Then search `ender's game`.
    `fakeSearch` needed a callback. Where did the code from inside that callback go?
 
+- The code from the callback went into the listener after the await searchBooks() call. Then, once that function returns results, the rest of the listener runs. Since we have await now, we don't have to use another function call in order to wait for the results and then render them.
+
 10. **Missing authors.** Search `annual report`. Some books have no author, and your page breaks: look at the Console. Fix `renderResults` the way we did in Wednesday's step 6: start with `let author = "Unknown author";` and only use `book.author_name[0]` if `book.author_name` exists. Do the same for the year, leaving it out when `book.first_publish_year` doesn't exist.
     What was the error in the Console before you fixed it?
 

@@ -34,7 +34,17 @@ function renderResults(books) {
   results.textContent = "";
   books.forEach(function (book) {
     const li = document.createElement("li");
-    li.textContent = book.title + " — " + book.author_name[0] + " (" + book.first_publish_year + ")";
+    let author = "Unknown author";
+    console.log(author); // debugging check
+    if (book.author_name) {
+      author = book.author_name[0]; // set author name only if one exists
+    }
+    console.log(book.author_name); // debugging check
+    let year = "";
+    if (book.first_publish_year) {
+      year = " (" + book.first_publish_year + ")"; // set publishing year only if one exists
+    }
+    li.textContent = book.title + " — " + author + year;
     const save = document.createElement("button");
     save.textContent = "Save";
     save.addEventListener("click", function () {
