@@ -1,0 +1,27 @@
+body {
+    font-family: system-ui, sans-serif;
+    max-width: 35rem;
+    margin: 2rem auto;
+    background: #fffdfd;
+  }
+  
+  h1 {
+    color: #2b6cb0;
+  }
+  
+  #message {
+    font-style: italic;
+  }
+
+  #list {
+    padding: 0;
+  }
+  
+  #list li {
+    list-style: none;
+    background: rgba(210, 228, 178, 0.37);
+    border: 1px solid #727272;
+    border-radius: 8px;
+    padding: 0.6rem;
+    margin: 0.4rem 0;
+  }

@@ -33,6 +33,12 @@ function renderResults(books) {
   books.forEach(function (book) {
     const li = document.createElement("li");
     li.textContent = book.title + " — " + book.author_name[0] + " (" + book.first_publish_year + ")";
+    const save = document.createElement("button");
+    save.textContent = "Save";
+    save.addEventListener("click", function () {
+      console.log("save", book.title);
+    });
+    li.append(save);
     results.append(li);
   });
 }
