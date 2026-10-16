@@ -72,9 +72,15 @@ form.addEventListener("submit", async function (event) {
 
   // wait for books, then render in list
   statusMessage.textContent = "Searching...";
-  const books = await searchBooks(query);
-  console.log("got", books);
-  renderResults(books);
+  try {
+    const books = await searchBooks(query);
+    console.log("got", books);
+    renderResults(books);
+  } catch (error) {
+    console.log("something went wrong:", error);
+    statusMessage.textContent = "Couldn't reach the library. Check your connection.";
+  }
+
 
   // if no books found, update status
   if (books.length === 0) {

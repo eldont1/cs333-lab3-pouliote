@@ -138,6 +138,13 @@ Commit: `Part 1: fake search shows results`
 10. **Missing authors.** Search `annual report`. Some books have no author, and your page breaks: look at the Console. Fix `renderResults` the way we did in Wednesday's step 6: start with `let author = "Unknown author";` and only use `book.author_name[0]` if `book.author_name` exists. Do the same for the year, leaving it out when `book.first_publish_year` doesn't exist.
     What was the error in the Console before you fixed it?
 
+- Error: Uncaught (in promise) TypeError: Cannot read properties of undefined (reading '0')
+    at app.js:43:59
+    at Array.forEach (<anonymous>)
+    at renderResults (app.js:35:9)
+    at HTMLFormElement.<anonymous> (app.js:73:3)
+- Basically, the code wasn't reading the right author variable, and was still trying to index for an empty array, hence the "cannot read properties of undefined".
+
 11. **When the internet fails.** DevTools → **Network** → **Offline**, then search: stuck on "Searching...". Wrap the middle of your listener in `try` / `catch`, the way we did in Wednesday's step 5:
     ```js
       try {
